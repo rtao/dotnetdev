@@ -6,6 +6,8 @@ WORKDIR /var/tmp
 RUN git clone -b develop https://github.com/rtao/dotnetdev.git
 WORKDIR /var/tmp/dotnetdev
 
+RUN dotnet restore
+
 RUN chmod 755 ./project-start.sh
 
 COPY project-start.sh /project-start.sh
