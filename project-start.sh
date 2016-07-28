@@ -1,4 +1,4 @@
 #!/bin/bash
-/usr/bin/dotnet restore /home/ronald/dotnetdev
-/usr/bin/dotnet build /home/ronald/dotnetdev
-/usr/bin/dotnet run /home/ronald/dotnetdev
+/usr/bin/dotnet restore /var/tmp/dotnetdev
+/usr/bin/dotnet build /var/tmp/dotnetdev
+/usr/bin/dotnet run /var/tmp/dotnetdev

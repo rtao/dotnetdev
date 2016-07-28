@@ -1,17 +1,15 @@
 FROM microsoft/dotnet:latest
 MAINTAINER Ronald Tao
 
-RUN useradd -m ronald
-USER ronald
-WORKDIR /home/ronald
+WORKDIR /var/tmp
 
 RUN git clone -b develop https://github.com/rtao/dotnetdev.git
-WORKDIR /home/ronald/dotnetdev
+WORKDIR /var/tmp/dotnetdev
 
-RUN dotnet restore \
-    && dotnet build 
+RUN chmod 755 ./project-start.sh
 
-COPY project-start.sh /project-start.sh
-ENTRYPOINT ["/project-start.sh"]
+#COPY project-start.sh /project-start.sh
 EXPOSE 5000
 
+CMD ["/bin/bash"]
+#CMD ["/project-start.sh"]
